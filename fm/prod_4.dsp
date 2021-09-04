@@ -13,7 +13,7 @@ ops_in_group = 2;
 
 main_freq = hslider("[0]freq", 20.0, 0.1, 20000, 0.1);
 
-group = prod(i, ops_in_group, hgroup("operator %i", op));
+group = prod(i, ops_in_group, hgroup("operator %i", fm_op));
 groups = par(i, num_groups, hgroup("group %i", group));
 
 process = main_freq <: groups :> os.osc;
