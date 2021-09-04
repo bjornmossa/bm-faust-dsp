@@ -1,0 +1,22 @@
+declare name "Bjornmossa Utils Library";
+declare version "0.1";
+declare license "GPL v3";
+
+import("basics.lib");
+
+mix(x) = _ * left, _ * right
+with {
+    left = 1 - x;
+    right = x;
+};
+
+select(n) = selectn(i, n)
+with {
+    i = nentry("wave", 0.0, 0.0, 4, 1.0);
+};
+
+fm_op(f) = os.osc(f * ratio) * f * index
+with {
+  ratio = hslider("ratio[style:knob]", 1.0, 0.0, 20, 0.01);
+  index = hslider("depth[style:knob]", 0.1, 0.0, 1.0, 0.01);
+};
