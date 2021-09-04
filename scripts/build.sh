@@ -6,12 +6,11 @@ build_dir="build/$dir"
 file_dir=""
 file_name=""
 
-mkdir "build"
 mkdir $build_dir
 
 cp "./utils.lib" "$build_dir"
 
-for f in $(ls $sources); 
+for f in $(ls $sources);
 do 
     echo Processing $f ;
     file_name=$(cut -d . -f 1 <<< $f);
@@ -22,4 +21,4 @@ do
     faust2supercollider -d "$file_dir/$f"
 done;
 
-echo "$PWD/$dir"
+rm "$build_dir/utils.lib"
