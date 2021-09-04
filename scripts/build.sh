@@ -19,7 +19,7 @@ do
     mkdir $file_dir;
     cp "$sources/$f" $file_dir;
 
-    faust2supercollider "$file_dir/$f"
+    faust2supercollider -d "$file_dir/$f"
 done;
 
 echo "$PWD/$dir"
